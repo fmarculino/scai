@@ -53,7 +53,8 @@ class Requisitions(models.Model):
     description = models.TextField('Descrição')
     value = models.DecimalField('valor', max_digits=15, decimal_places=2)
     discount = models.DecimalField('desconto', max_digits=15, decimal_places=2)
-    state = models.CharField(max_length=1, choices=STATES)
+    state = models.CharField('situação', max_length=1, choices=STATES,
+                             default=open)
     note = models.TextField('observações', )
     paid_at = models.DateTimeField('pago em', auto_now_add=True)
     created_at = models.DateTimeField('criado em', auto_now_add=True)
