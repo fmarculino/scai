@@ -1,0 +1,1 @@
+web: gunicorn scai.wsgi --log-file -
