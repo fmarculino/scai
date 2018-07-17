@@ -1,10 +1,10 @@
 from django.db import models
 
 
-class Providers(models.Model):
-    group = models.CharField('grupo', max_length=50)
+class Provider(models.Model):
+    group = models.CharField('grupo', blank=True, max_length=50)
     name = models.CharField('nome', max_length=100)
-    note = models.TextField('observações', )
+    note = models.TextField('observações', blank=True)
     created_at = models.DateTimeField('criado em', auto_now_add=True)
     update_at = models.DateTimeField('atualizado em', auto_now=True)
 
@@ -17,13 +17,13 @@ class Providers(models.Model):
         return self.name
 
 
-class Functionarys(models.Model):
-    group = models.CharField('grupo', max_length=50)
+class Functionary(models.Model):
+    group = models.CharField('grupo', max_length=50, blank=True)
     name = models.CharField('nome', max_length=100)
-    membership = models.CharField('filiação', max_length=100)
-    conjugate = models.CharField('conjugue', max_length=100)
-    salary = models.DecimalField('salário', max_digits=15, decimal_places=2)
-    note = models.TextField('observações', )
+    membership = models.CharField('filiação', max_length=100, blank=True)
+    conjugate = models.CharField('conjugue', max_length=100, blank=True)
+    salary = models.DecimalField('salário', default=0, max_digits=15, decimal_places=2)
+    note = models.TextField('observações', blank=True)
     created_at = models.DateTimeField('criado em', auto_now_add=True)
     update_at = models.DateTimeField('atualizado em', auto_now=True)
 
@@ -36,7 +36,7 @@ class Functionarys(models.Model):
         return self.name
 
 
-class Requisitions(models.Model):
+class Requisition(models.Model):
     open = 'A'
     paid = 'P'
     STATES = (
@@ -44,18 +44,18 @@ class Requisitions(models.Model):
         (paid, 'Pago')
     )
     number = models.AutoField('número', primary_key=True)
-    provider = models.ForeignKey('Providers', on_delete=models.CASCADE,
+    provider = models.ForeignKey('Provider', on_delete=models.CASCADE,
                                  verbose_name='fornecedor')
-    requester = models.CharField('requisitante', max_length=100)
-    functionary = models.ForeignKey('Functionarys', on_delete=models.CASCADE,
+    requester = models.CharField('requisitante', max_length=100, blank=True)
+    functionary = models.ForeignKey('Functionary', on_delete=models.CASCADE,
                                     verbose_name='funcionário')
-    activity = models.CharField('atividade', max_length=100)
-    description = models.TextField('Descrição')
-    value = models.DecimalField('valor', max_digits=15, decimal_places=2)
-    discount = models.DecimalField('desconto', max_digits=15, decimal_places=2)
+    activity = models.CharField('atividade', max_length=100, blank=True)
+    description = models.TextField('Descrição', blank=True)
+    value = models.DecimalField('valor', default=0, max_digits=15, decimal_places=2)
+    discount = models.DecimalField('desconto', default=0, max_digits=15, decimal_places=2, blank=True)
     state = models.CharField('situação', max_length=1, choices=STATES,
                              default=open)
-    note = models.TextField('observações', )
+    note = models.TextField('observações', blank=True)
     paid_at = models.DateTimeField('pago em', auto_now_add=True)
     created_at = models.DateTimeField('criado em', auto_now_add=True)
     update_at = models.DateTimeField('atualizado em', auto_now=True)
