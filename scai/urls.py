@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.utils.translation import ugettext_lazy as _
 
 #     path('admin/', admin.site.urls),
 urlpatterns = [
     path('', admin.site.urls),
 ]
+
+# Change admin site title
+admin.site.site_header = _("Administração Porekro-Admin")
+admin.site.site_title = _("Scai - Porekro")
+
