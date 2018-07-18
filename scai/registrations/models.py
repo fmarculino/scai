@@ -18,18 +18,33 @@ class Provider(models.Model):
 
 
 class Functionary(models.Model):
-    group = models.CharField('grupo', max_length=50, blank=True)
+    GROUPS = (
+        ('functionary', 'Funcionário'),
+        ('leadership', 'Liderança'),
+        ('agricultural', 'Agríola'),
+        ('retired', 'Aposentados'),
+        ('agricultural wives', 'Esposas agricola'),
+        ('cleaning', 'Limpeza'),
+        ('education 1º step', 'Educação 1º etapa'),
+        ('education 2º step', 'Educação 2º etapa'),
+        ('krimeiruk wives', 'Esposas Krimeiruk'),
+        ('kamkrokró wives', 'Esposas Kamkrokró'),
+        ('purekokeí wives', 'Esposas Purokokeí'),
+    )
+    group = models.CharField('grupo', max_length=50, choices=GROUPS,
+                             default='functionary')
     name = models.CharField('nome', max_length=100)
     membership = models.CharField('filiação', max_length=100, blank=True)
     conjugate = models.CharField('conjugue', max_length=100, blank=True)
-    salary = models.DecimalField('salário', default=0, max_digits=15, decimal_places=2)
+    salary = models.DecimalField('salário', default=0, max_digits=15,
+                                 decimal_places=2)
     note = models.TextField('observações', blank=True)
     created_at = models.DateTimeField('criado em', auto_now_add=True)
     update_at = models.DateTimeField('atualizado em', auto_now=True)
 
     class Meta:
-        verbose_name = 'funcionário'
-        verbose_name_plural = 'funcionários'
+        verbose_name = 'índio'
+        verbose_name_plural = 'índios'
         ordering = ('name',)
 
     def __str__(self):
@@ -48,11 +63,13 @@ class Requisition(models.Model):
                                  verbose_name='fornecedor')
     requester = models.CharField('requisitante', max_length=100, blank=True)
     functionary = models.ForeignKey('Functionary', on_delete=models.CASCADE,
-                                    verbose_name='funcionário')
+                                    verbose_name='índio')
     activity = models.CharField('atividade', max_length=100, blank=True)
     description = models.TextField('Descrição', blank=True)
-    value = models.DecimalField('valor', default=0, max_digits=15, decimal_places=2)
-    discount = models.DecimalField('desconto', default=0, max_digits=15, decimal_places=2, blank=True)
+    value = models.DecimalField('valor', default=0, max_digits=15,
+                                decimal_places=2)
+    discount = models.DecimalField('desconto', default=0, max_digits=15,
+                                   decimal_places=2, blank=True)
     state = models.CharField('situação', max_length=1, choices=STATES,
                              default=open)
     note = models.TextField('observações', blank=True)
