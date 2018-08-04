@@ -22,10 +22,10 @@ from scai.core.views import DocumentRequisitionView
 #     path('admin/', admin.site.urls),
 urlpatterns = [
     path('', admin.site.urls),
-    path('requisitions/<int:pk>/document', DocumentRequisitionView.as_view(), name='document-requisition')
+    path('requisitions/<int:pk>/document', DocumentRequisitionView.as_view(),
+         name='document-requisition')
 ]
 
 # Change admin site title
 admin.site.site_header = _("Administração Porekro-Admin")
 admin.site.site_title = _("Scai - Porekro")
-

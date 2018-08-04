@@ -28,7 +28,8 @@ class RequisitionModelAdmin(admin.ModelAdmin):
     list_filter = ('provider', 'requester', 'functionary', 'created_at')
 
     def documento(self, instance):
-        return format_html("<a href='{url}' target='_blank'>URL</a>", url=instance.document_url)
+        return format_html("<a href='{url}' target='_blank'>URL</a>",
+                           url=instance.document_url)
 
 
 admin.site.register(Provider, ProviderModelAdmin)
