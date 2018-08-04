@@ -23,7 +23,7 @@ class RequisitionModelAdmin(admin.ModelAdmin):
     form = select2_modelform(Requisition)
     list_display = (
         'number', 'provider', 'requester', 'functionary', 'activity',
-        'discount', 'created_at', 'note', 'documento')
+        'discount', 'note', 'documento', 'created_at')
     search_fields = ('number', 'provider', 'requester', 'functionary')
     list_filter = ('provider', 'requester', 'functionary', 'created_at')
 

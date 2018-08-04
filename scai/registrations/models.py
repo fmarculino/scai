@@ -53,9 +53,11 @@ class Functionary(models.Model):
 
 
 class Requisition(models.Model):
+    created = 'C'
     open = 'A'
     paid = 'P'
     STATES = (
+        (created, 'Criada'),
         (open, 'Aberto'),
         (paid, 'Pago')
     )
@@ -72,7 +74,7 @@ class Requisition(models.Model):
     discount = models.DecimalField('desconto', default=0, max_digits=15,
                                    decimal_places=2, blank=True)
     state = models.CharField('situação', max_length=1, choices=STATES,
-                             default=open)
+                             default=created)
     note = models.TextField('observações', blank=True)
     paid_at = models.DateTimeField('pago em', auto_now_add=True)
     created_at = models.DateTimeField('criado em', auto_now_add=True)
