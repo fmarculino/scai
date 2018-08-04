@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/requisition.css' %}">
+</head>
+<body>
+
+<div class="container main">
+    <div class="row border-black-block">
+        <div class="col-md">
+            <h3 class="text-center">REQUISIÇÃO DE MERCADORIA / SERVIÇO</h3>
+        </div>
+    </div>
+    <div class="row border-black-left border-black-bottom border-black-right">
+        <div class="col-md">
+            <img class="float-left assoc-logo" src="{% static 'imgs/assoc-logo.jpg' %}">
+            <h2 class="text-center"><b>ASSOCIAÇÃO INDÍGENA POREKRÔ</b></h2>
+            <p class="text-center">DE DEFESA DO POVO XIKRIN DO KATETÉ</p>
+            <p class="text-center">END.: RESERVA INDÍGENA KATETÉ, SN - ZONA RURAL - PARAUAPEBAS-PA</p>
+            <p class="text-center">CNPJ 09.309323/0001-36 - FONE FAX 94 3322 1020 / 1347</p>
+        </div>
+    </div>
+    <div class="row border-black-left border-black-bottom border-black-right">
+        <div class="col-md border-black-right">
+            <p class="text-justify"><b>FORNECEDOR:</b> {{ requisition.provider }}</p>
+        </div>
+        <div class="col-md">
+            <p class="text-justify"><b>Nº REQUISIÇÃO:</b> {{ requisition.pk }}</p>
+        </div>
+    </div>
+    <div class="row border-black-left border-black-bottom border-black-right">
+        <div class="col-md border-black-right">
+            <p class="text-justify"><b>REQUISITANTE:</b> {{ requisition.requester }}</p>
+        </div>
+        <div class="col-md">
+            <p class="text-justify"><b>DATA:</b> {{ requisition.created_at }}</p>
+        </div>
+    </div>
+    <div class="row border-black-left border-black-bottom border-black-right">
+        <div class="col-md border-black-right">
+            <p class="text-justify"><b>ATIVIDADE:</b> {{ requisition.activity }}</p>
+        </div>
+        <div class="col-md">
+            <p class="text-justify"><b>FOLHA:</b> </p>
+        </div>
+    </div>
+
+    <div class="row border-black-left border-black-right">
+        <div class="col-10 border-black-bottom border-black-right">
+            <p><b>DESCRIÇÃO:</b></p>
+            <p>{{ requisition.description }}</p>
+        </div>
+        <div class="col-2">
+            <p><b>VALOR:</b> {{ requisition.value }}</p>
+        </div>
+    </div>
+
+    <div class="row border-black-left border-black-bottom border-black-right">
+        <div class="col-10 border-black-right">
+            <p><b>OBSERVAÇÕES:</b></p>
+            <p>{{ requisition.note }}</p>
+        </div>
+        <div class="col-2">
+        </div>
+    </div>
+
+    <div class="row border-black-left border-black-bottom border-black-right">
+        <div class="col-10 border-black-right">
+            <p class="text-right"><b>DESCONTO:</b></p>
+        </div>
+        <div class="col-2">
+            <p class="text-center">{{ requisition.discount }}</p>
+        </div>
+    </div>
+
+    <div class="row border-black-left border-black-bottom border-black-right">
+        <div class="col-10 border-black-right">
+            <p class="text-right"><b>TOTAL GERAL:</b></p>
+        </div>
+        <div class="col-2">
+            <p class="text-center">{{ requisition.total_value }}</p>
+        </div>
+    </div>
+    <div class="row border-black-left border-black-bottom border-black-right">
+        <div class="col-md">
+            <p class="text-justify"><b>OBS1:</b> DE ACORDO COM O DISPOSTO NO ARTIGO 58, INCISO III, DA LEI Nº 6001/73, CONSTITUI CRIME CONTRA OS ÍNDIOS E A CULTURA INDÍGENA, PROPICIAR, POR QUALQUER MEIO, A AQUISIÇÃO, O USO E A DISSEMINAÇÃO DE BEBIDAS ALCOOLICAS.</p>
+        </div>
+    </div>
+    <div class="row border-black-left border-black-bottom border-black-right">
+        <div class="col-md">
+            <p class="text-justify"><b>OBS2:</b> PARA O PROCESSO DE PAGAMENTO, ESTA REQUISIÇÃO ORIGINAL DEVERÁ SER ANEXADA À NOTA FISCAL. NÃO SERÁ ACEITA COBRANÇA COM CÓPIA DE REQUISIÇÃO.</p>
+        </div>
+    </div>
+    <div class="row border-black-left border-black-bottom border-black-right">
+        <div class="col-md">
+            <p class="text-justify"><b>OBS1:</b> ESTA REQUISIÇÃO SOMENTE SERÁ RECONHECIDA PELA ASSOCIAÇÃO POREKRÔ SE ASSINADA PELO PRESIDENTE KAIURE XIKRIN OU GERENTE BEP KÓ XIKRIN E NA AUSÊNCIA O FUNCIONÁRIO RAFAEL DA SILVA MELO.</p>
+        </div>
+    </div>
+    <div class="row signatures border-black-left border-black-bottom border-black-right">
+        <div class="col-md border-black-right">
+            <br>
+            <br>
+            <br>
+            <p class="border-black-top"></p>
+            <p class="text-center">AUTORIZAÇÃO</p>
+            <p class="text-center">KAIURE XIKRIN</p>
+            <p class="text-center">PRESIDENTE POREKRO</p>
+        </div>
+        <div class="col-md border-black-right">
+            <br>
+            <br>
+            <br>
+            <p class="border-black-top"></p>
+            <p class="text-center">DE ACORDO</p>
+            <p class="text-center">BEP KO XIKRIN</p>
+            <p class="text-center">GERENTE POREKRO</p>
+        </div>
+        <div class="col-md">
+            <br>
+            <br>
+            <br>
+            <p class="border-black-top"></p>
+            <p class="text-center">CLIENTE</p>
+            <p class="text-center">{{ requisition.functionary }}</p>
+        </div>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+.border-black-block {
+    border: 1px solid black;
+}
+
+.border-black-top {
+    border-top: 1px solid black;
+}
+
+.border-black-left {
+    border-left: 1px solid black;
+}
+
+.border-black-right {
+    border-right: 1px solid black;
+}
+
+.border-black-bottom {
+    border-bottom: 1px solid black;
+}
+
+img.assoc-logo {
+    width: 150px;
+    margin-top: 15px;
+    margin-right: -150px;
+}
+
+.signatures p {
+    margin-bottom: 0;
+}

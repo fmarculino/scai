@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.html import format_html
 from easy_select2 import select2_modelform
 from scai.registrations.models import Provider, Functionary, Requisition
 
@@ -22,9 +23,12 @@ class RequisitionModelAdmin(admin.ModelAdmin):
     form = select2_modelform(Requisition)
     list_display = (
         'number', 'provider', 'requester', 'functionary', 'activity',
-        'discount', 'created_at', 'note')
+        'discount', 'created_at', 'note', 'documento')
     search_fields = ('number', 'provider', 'requester', 'functionary')
     list_filter = ('provider', 'requester', 'functionary', 'created_at')
+
+    def documento(self, instance):
+        return format_html("<a href='{url}' target='_blank'>URL</a>", url=instance.document_url)
 
 
 admin.site.register(Provider, ProviderModelAdmin)

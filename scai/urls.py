@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from django.utils.translation import ugettext_lazy as _
 
+from scai.core.views import DocumentRequisitionView
+
 #     path('admin/', admin.site.urls),
 urlpatterns = [
     path('', admin.site.urls),
+    path('requisitions/<int:pk>/document', DocumentRequisitionView.as_view(), name='document-requisition')
 ]
 
 # Change admin site title

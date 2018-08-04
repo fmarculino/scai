@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Provider(models.Model):
@@ -84,3 +85,11 @@ class Requisition(models.Model):
 
     def __str__(self):
         return str(self.number)
+
+    @property
+    def document_url(self):
+        return reverse('document-requisition', kwargs={'pk': self.pk})
+
+    @property
+    def total_value(self):
+        return self.value - self.discount
