@@ -11,92 +11,496 @@
 
 <div class="container main">
     <div class="row border-black-block">
-        <div class="col-md">
-            <h3 class="text-center">REQUISIÇÃO DE MERCADORIA / SERVIÇO</h3>
+        <div class="col-md t1">
+            <h4 class="text-center">REQUISIÇÃO DE MERCADORIA / SERVIÇO</h4>
         </div>
     </div>
     <div class="row border-black-left border-black-bottom border-black-right">
-        <div class="col-md">
+        <div class="col-md c1">
             <img class="float-left assoc-logo" src="{% static 'imgs/assoc-logo.jpg' %}">
-            <h2 class="text-center"><b>ASSOCIAÇÃO INDÍGENA POREKRÔ</b></h2>
+            <h3 class="text-center"><b>ASSOCIAÇÃO INDÍGENA POREKRÔ</b></h3>
             <p class="text-center">DE DEFESA DO POVO XIKRIN DO KATETÉ</p>
             <p class="text-center">END.: RESERVA INDÍGENA KATETÉ, SN - ZONA RURAL - PARAUAPEBAS-PA</p>
             <p class="text-center">CNPJ 09.309323/0001-36 - FONE FAX 94 3322 1020 / 1347</p>
         </div>
     </div>
-    <div class="row border-black-left border-black-bottom border-black-right">
-        <div class="col-md border-black-right">
+    <div class="row align-items-center border-black-left border-black-bottom border-black-right">
+        <div class="col-md-8 t1">
             <p class="text-justify"><b>FORNECEDOR:</b> {{ requisition.provider }}</p>
         </div>
-        <div class="col-md">
-            <p class="text-justify"><b>Nº REQUISIÇÃO:</b> {{ requisition.pk }}</p>
+        <div class="col-md-4 ">
+            <div class="row t1 border-black-bottom border-black-left">
+                <div class="col-md">
+                    <p class="text-justify"><b>Nº REQUISIÇÃO:</b> {{ requisition.pk }}</p>
+                </div>
+            </div>
+            <div class="row t1 border-black-left">
+                <div class="col-md">
+                    <p class="text-justify"><b>DATA:</b> {{ requisition.created_at }}</p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row border-black-left border-black-bottom border-black-right">
-        <div class="col-md border-black-right">
-            <p class="text-justify"><b>REQUISITANTE:</b> {{ requisition.requester }}</p>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 align-self-center border-black-right">
+            <center><p><b>ITEM</b></p></center>
         </div>
-        <div class="col-md">
-            <p class="text-justify"><b>DATA:</b> {{ requisition.created_at }}</p>
+        <div class="col-md-7 border-black-right">
+            <center><p><b>HISTÓRICO</b></p></center>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <center><p><b>UNID</b></p></center>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <center><p><b>QUANT</b></p></center>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <center><p><b>V.UNIT</b></p></center>
+        </div>
+        <div class="col-md-1">
+            <center><p><b>V.TOTAL</b></p></center>
         </div>
     </div>
-    <div class="row border-black-left border-black-bottom border-black-right">
-        <div class="col-md border-black-right">
-            <p class="text-justify"><b>ATIVIDADE:</b> {{ requisition.activity }}</p>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>1</b></p></center>
         </div>
-        <div class="col-md">
-            <p class="text-justify"><b>FOLHA:</b> </p>
-        </div>
-    </div>
-
-    <div class="row border-black-left border-black-right">
-        <div class="col-10 border-black-bottom border-black-right">
-            <p><b>DESCRIÇÃO:</b></p>
+        <div class="col-md-7 border-black-right">
             <p>{{ requisition.description }}</p>
         </div>
-        <div class="col-2">
-            <p><b>VALOR:</b> {{ requisition.value }}</p>
+        <div class="col-md-1 border-black-right">
+            <p>COMP</p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <center><p>1</p></center>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p>{{ requisition.value }}</p>
+        </div>
+        <div class="col-md-1">
+            <p>{{ requisition.value }}</p>
         </div>
     </div>
-
-    <div class="row border-black-left border-black-bottom border-black-right">
-        <div class="col-10 border-black-right">
-            <p><b>OBSERVAÇÕES:</b></p>
-            <p>{{ requisition.note }}</p>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>2</b></p></center>
         </div>
-        <div class="col-2">
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
         </div>
     </div>
-
-    <div class="row border-black-left border-black-bottom border-black-right">
-        <div class="col-10 border-black-right">
-            <p class="text-right"><b>DESCONTO:</b></p>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>3</b></p></center>
         </div>
-        <div class="col-2">
-            <p class="text-center">{{ requisition.discount }}</p>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
         </div>
     </div>
-
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>4</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>5</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>6</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>7</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>8</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>9</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>10</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p><b>{{ requisition.note }}</b></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>11</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>12</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>13</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>14</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>15</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>16</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>17</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>18</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>19</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>20</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
+    <div class="row t1 border-black-left border-black-right border-black-bottom">
+        <div class="col-md-1 border-black-right">
+            <center><p><b>21</b></p></center>
+        </div>
+        <div class="col-md-7 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1 border-black-right">
+            <p></p>
+        </div>
+        <div class="col-md-1">
+            <p></p>
+        </div>
+    </div>
     <div class="row border-black-left border-black-bottom border-black-right">
-        <div class="col-10 border-black-right">
+        <div class="col-10 t1 border-black-right">
             <p class="text-right"><b>TOTAL GERAL:</b></p>
         </div>
-        <div class="col-2">
+        <div class="col-2 t1">
             <p class="text-center">{{ requisition.total_value }}</p>
         </div>
     </div>
     <div class="row border-black-left border-black-bottom border-black-right">
-        <div class="col-md">
-            <p class="text-justify"><b>OBS1:</b> DE ACORDO COM O DISPOSTO NO ARTIGO 58, INCISO III, DA LEI Nº 6001/73, CONSTITUI CRIME CONTRA OS ÍNDIOS E A CULTURA INDÍGENA, PROPICIAR, POR QUALQUER MEIO, A AQUISIÇÃO, O USO E A DISSEMINAÇÃO DE BEBIDAS ALCOOLICAS.</p>
+        <div class="col-md t1">
+            <p class="text-justify"><b>OBS1:</b> FICA A CRITÉRIO DO FORNECEDOR ATENDER REQUISIÇÕES DE INDÍGENAS QUE JÁ POSSUAM CONTAS PENDENTES DE PAGAMENTO EM SEU ESTABELECIMENTO.</p>
         </div>
     </div>
     <div class="row border-black-left border-black-bottom border-black-right">
-        <div class="col-md">
+        <div class="col-md t1">
             <p class="text-justify"><b>OBS2:</b> PARA O PROCESSO DE PAGAMENTO, ESTA REQUISIÇÃO ORIGINAL DEVERÁ SER ANEXADA À NOTA FISCAL. NÃO SERÁ ACEITA COBRANÇA COM CÓPIA DE REQUISIÇÃO.</p>
         </div>
     </div>
     <div class="row border-black-left border-black-bottom border-black-right">
-        <div class="col-md">
+        <div class="col-md t1">
             <p class="text-justify"><b>OBS1:</b> ESTA REQUISIÇÃO SOMENTE SERÁ RECONHECIDA PELA ASSOCIAÇÃO POREKRÔ SE ASSINADA PELO PRESIDENTE KAIURE XIKRIN OU GERENTE BEP KÓ XIKRIN E NA AUSÊNCIA O FUNCIONÁRIO RAFAEL DA SILVA MELO.</p>
         </div>
     </div>
