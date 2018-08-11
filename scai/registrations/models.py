@@ -20,6 +20,8 @@ class Provider(models.Model):
 
 class Functionary(models.Model):
     GROUPS = (
+        ('poultry farming', 'Avicultura'),
+        ('beekeeping', 'Apicultura'),
         ('functionary', 'Funcionário'),
         ('leadership', 'Liderança'),
         ('agricultural', 'Agríola'),
