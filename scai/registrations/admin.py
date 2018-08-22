@@ -24,7 +24,8 @@ class RequisitionModelAdmin(admin.ModelAdmin):
     list_display = (
         'number', 'provider', 'requester', 'functionary', 'activity',
         'value', 'note', 'documento', 'created_at')
-    search_fields = ('number', 'provider', 'requester', 'functionary')
+    search_fields = ('number', 'requester','functionary__name',
+                     'provider__name')
     list_filter = ('provider', 'requester', 'functionary', 'created_at')
 
     def documento(self, instance):
