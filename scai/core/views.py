@@ -8,4 +8,3 @@ class DocumentRequisitionView(LoginRequiredMixin, DetailView):
     template_name = 'core/requisition.html'
     queryset = Requisition.objects.all()
     context_object_name = 'requisition'
-
