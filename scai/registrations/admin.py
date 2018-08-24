@@ -26,7 +26,7 @@ class RequisitionModelAdmin(admin.ModelAdmin):
         'value', 'note', 'documento', 'created_at')
     search_fields = ('number', 'requester','functionary__name',
                      'provider__name')
-    list_filter = ('provider', 'requester', 'functionary', 'created_at')
+    list_filter = ('provider', 'requester', 'created_at')
 
     def documento(self, instance):
         return format_html("<a href='{url}' target='_blank'>URL</a>",
